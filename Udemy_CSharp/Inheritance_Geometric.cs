@@ -54,6 +54,13 @@ namespace Udemy_CSharp
         public override string ToString() => $"X: {x}, Y: {y}";
     }
 
+    public interface ICalculable
+    {
+        public float GetArea();
+
+        public float GetCircumference();
+    }
+
     public class Shape : ICloneable, IEnumerable<Point>
     {
         private Point[] points;
@@ -65,20 +72,34 @@ namespace Udemy_CSharp
 
         public object Clone() => new Shape(points);
 
-        public IEnumerator<Point> GetEnumerator() => throw new NotImplementedException();
+        // GetEnumerator have to return points from inner array
+        public IEnumerator<Point> GetEnumerator()
+        {
+            for (int i = 0; i < points.Length; i++)
+                yield return points[i];
+        }
 
-        IEnumerator IEnumerable.GetEnumerator() => points.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
 
-        public override string ToString() => $"Figura ma {points.Length} punktów";
-
+        public override string ToString() => $"Shape have {points.Length} edges";
     }
 
-    public class Triangle : Shape 
+    public class Triangle : Shape, ICalculable
     { 
         public Triangle(params Point[] input) : base(input) 
         {
             if (input.Length != 3)
                 throw new Exception("Number of points don't correspond with triangle!");
+        }
+
+        public float GetArea()
+        {
+            throw new NotImplementedException();
+        }
+
+        public float GetCircumference()
+        {
+            throw new NotImplementedException();
         }
     }
 }
