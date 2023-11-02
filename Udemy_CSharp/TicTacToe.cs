@@ -27,7 +27,7 @@ namespace Udemy_CSharp
                 Console.WriteLine($"Graczu {playerSign}: Wybierz pole!");
 
                 //check if choosen field is valid
-                string choosenField = Console.ReadLine();
+                string? choosenField = Console.ReadLine();
                 bool fieldFound = false;
                 for (int i = 0; i < board.GetLength(0); i++)
                     for (int j = 0; j < board.GetLength(1); j++)
