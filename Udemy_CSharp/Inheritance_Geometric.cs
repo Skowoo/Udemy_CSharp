@@ -6,10 +6,10 @@ namespace Udemy_CSharp
     {
         public static void PseudoMain()
         {
-            Point[] points = { new Point(0, 0), new Point(0, 2), new Point(2, 2) };
+            Point[] points = { new Point(0, 0), new Point(0, 2), new Point(2, 2), new Point(2, 2) };
             try
             {
-                Triangle example = new(points);
+                Rectangle example = new(points);
                 Console.WriteLine(example.ToString());
                 foreach (Point p in example)
                     Console.WriteLine(p.ToString());
@@ -74,6 +74,7 @@ namespace Udemy_CSharp
         protected Shape(params Point[] input)
         {
             points = input;
+            Console.WriteLine("Shape constructor called");
         }
 
         public object Clone() => new Shape(points);
@@ -105,6 +106,7 @@ namespace Udemy_CSharp
         {
             if (input.Length != 3)
                 throw new Exception("Number of points don't correspond with triangle!");
+            Console.WriteLine("Triangle constructor called");
         }
 
         public float GetArea()
@@ -115,10 +117,12 @@ namespace Udemy_CSharp
 
     public class Rectangle : Shape, ICalculable
     {
+        //Base class constructor will be called BEFORE input length is checked!
         public Rectangle(params Point[] input) : base(input)
         {
             if (input.Length != 4)
                 throw new Exception("Number of points don't correspond with triangle!");
+            Console.WriteLine("Rectangle constructor called");
         }
 
         public float GetArea()
