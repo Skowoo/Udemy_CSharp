@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
+﻿using System.Collections;
 
 namespace Udemy_CSharp
 {
@@ -13,16 +6,14 @@ namespace Udemy_CSharp
     {
         public static void PseudoMain()
         {
-            Point[] points = { new Point(1, 1), new Point(2, 2), new Point(4, 4) };
+            Point[] points = { new Point(0, 0), new Point(0, 2), new Point(2, 2) };
             try
             {
-                Triangle triangle = new(points);
-                Console.WriteLine(triangle.ToString());
-                var clone = triangle.Clone();
-                Console.WriteLine(clone.ToString());
-                Console.WriteLine(triangle.Equals(clone));
-                foreach (Point p in triangle)
+                Triangle example = new(points);
+                Console.WriteLine(example.ToString());
+                foreach (Point p in example)
                     Console.WriteLine(p.ToString());
+                Console.WriteLine(example.GetCircumference());
             }
             catch (Exception ex)
             { 
@@ -50,6 +41,21 @@ namespace Udemy_CSharp
         public void RelocateX(int x) => this.x = x;
 
         public void RelocateY(int y) => this.y = y;
+
+        public float CalculateDistanceBetween(Point other)
+        {
+            int BiggerX = Math.Max(Math.Abs(this.x), Math.Abs(other.x));
+            int BiggerY = Math.Max(Math.Abs(this.y), Math.Abs(other.y));
+            int smallerX = Math.Min(Math.Abs(this.x), Math.Abs(other.x));
+            int smallerY = Math.Min(Math.Abs(this.y), Math.Abs(other.y));
+
+            if (this.x == other.x)
+                return BiggerY - smallerY;
+            else if (this.y == other.y)
+                return BiggerX - smallerX;
+            else
+                return (float)Math.Sqrt(Math.Pow(BiggerY - smallerY, 2) + Math.Pow(BiggerX - smallerX, 2));
+        }
 
         public override string ToString() => $"X: {x}, Y: {y}";
     }
@@ -81,6 +87,15 @@ namespace Udemy_CSharp
 
         IEnumerator IEnumerable.GetEnumerator() => throw new NotImplementedException();
 
+        public virtual float GetCircumference()
+        {
+            float result = 0;
+            for (int i = 1; i < points.Length; i++)
+                result += points[i - 1].CalculateDistanceBetween(points[i]);
+            result += points[points.Length - 1].CalculateDistanceBetween(points[0]);
+            return result;
+        }
+
         public override string ToString() => $"Shape have {points.Length} edges";
     }
 
@@ -96,8 +111,17 @@ namespace Udemy_CSharp
         {
             throw new NotImplementedException();
         }
+    }
 
-        public float GetCircumference()
+    public class Rectangle : Shape, ICalculable
+    {
+        public Rectangle(params Point[] input) : base(input)
+        {
+            if (input.Length != 4)
+                throw new Exception("Number of points don't correspond with triangle!");
+        }
+
+        public float GetArea()
         {
             throw new NotImplementedException();
         }
