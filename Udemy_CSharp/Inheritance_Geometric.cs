@@ -60,14 +60,7 @@ namespace Udemy_CSharp
         public override string ToString() => $"X: {x}, Y: {y}";
     }
 
-    public interface ICalculable
-    {
-        public float GetArea();
-
-        public float GetCircumference();
-    }
-
-    public class Shape : ICloneable, IEnumerable<Point>
+    public abstract class Shape : IEnumerable<Point>
     {
         private Point[] points;
 
@@ -76,8 +69,6 @@ namespace Udemy_CSharp
             points = input;
             Console.WriteLine("Shape constructor called");
         }
-
-        public object Clone() => new Shape(points);
 
         // GetEnumerator have to return points from inner array
         public IEnumerator<Point> GetEnumerator()
@@ -97,10 +88,13 @@ namespace Udemy_CSharp
             return result;
         }
 
+        // Abstract method must be implemented in derived class (similarly to Interface)
+        public abstract float GetArea();
+
         public override string ToString() => $"Shape have {points.Length} edges";
     }
 
-    public class Triangle : Shape, ICalculable
+    public class Triangle : Shape
     { 
         public Triangle(params Point[] input) : base(input) 
         {
@@ -109,13 +103,18 @@ namespace Udemy_CSharp
             Console.WriteLine("Triangle constructor called");
         }
 
-        public float GetArea()
+        public override float GetArea()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override float GetCircumference()
         {
             throw new NotImplementedException();
         }
     }
 
-    public class Rectangle : Shape, ICalculable
+    public class Rectangle : Shape
     {
         //Base class constructor will be called BEFORE input length is checked!
         public Rectangle(params Point[] input) : base(input)
@@ -125,7 +124,12 @@ namespace Udemy_CSharp
             Console.WriteLine("Rectangle constructor called");
         }
 
-        public float GetArea()
+        public override float GetArea()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override float GetCircumference()
         {
             throw new NotImplementedException();
         }
