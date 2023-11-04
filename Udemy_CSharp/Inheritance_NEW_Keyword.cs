@@ -32,7 +32,7 @@
             Console.Write(Environment.NewLine);
 
             Derived2 d = new Derived2();
-            d.fun();
+            d.Fun();
 
             Console.Write(Environment.NewLine);
         }
@@ -64,7 +64,6 @@
         }
     }
 
-    //Second SICK case - PUBLIC in base class makes this method first to be called, because other are fckn INACCESSIBLE XD
     // ---------------------------------> Default access modifiers at Class level are private. <------------------------------------
 
     //                  Tricky tricky!!!!
@@ -79,9 +78,10 @@
 
     //Documentation link - https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers
 
+    //Derived method are not called because they have DEFAULT method modifier - PRIVATE int this case.
     class Baseclass
     {
-        public void fun()
+        public void Fun()
         {
             Console.Write("Base class" + " ");
         }
@@ -89,7 +89,7 @@
 
     class Derived1 : Baseclass
     {
-        new void fun()
+        new void Fun()
         {
             Console.Write("Derived1 class" + " ");
         }
@@ -97,7 +97,7 @@
 
     class Derived2 : Derived1
     {
-        new void fun()
+        new void Fun()
         {
             Console.Write("Derived2 class" + " ");
         }

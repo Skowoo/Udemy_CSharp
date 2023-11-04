@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Inheritance_NEW_Keyword.PseudoMain();
+            
         }
     }
 }
