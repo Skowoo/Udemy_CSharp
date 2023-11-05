@@ -2,7 +2,7 @@
 using System.Runtime.Intrinsics.X86;
 using System.Xml.Linq;
 
-namespace Udemy_CSharp
+namespace Udemy_CSharp.RegexTraining
 {
     internal class Assigment2_FileText
     {
@@ -21,6 +21,8 @@ namespace Udemy_CSharp
                 }
 
             File.WriteAllText(@"C:\Users\Skowoo\Desktop\result.txt", result);
+
+            //Result:  Failure is not the opposite
         }
     }
 
