@@ -6,7 +6,7 @@ namespace Udemy_CSharp
     {
         static void Main(string[] args)
         {
-            
+            Null_Coalescing.PseudoMain();
         }
     }
 }
