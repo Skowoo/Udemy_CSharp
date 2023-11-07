@@ -71,7 +71,9 @@ namespace Udemy_CSharp
 
         public override void Repair() => Console.WriteLine("Deri overrid: BMW {0} was repaired!", Model);
 
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public void ShowDetails() => Console.WriteLine($"Deri        : Power: {HP}, color: {Color}, Model: {Model}");
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
     }
 
     class Audi : Car
