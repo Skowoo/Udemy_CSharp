@@ -6,6 +6,8 @@ namespace Udemy_CSharp
     {
         public static void PseudoMain()
         {
+            GameEventManager.TriggerGameStart();
+
             //Create engines
             GraphicEngine graphic = new GraphicEngine();
             SoundEngine sound = new SoundEngine();
@@ -33,23 +35,21 @@ namespace Udemy_CSharp
         // EVENT keyword will make it impossible to call the event from outside of this class! Also it forces statement to behave as a list (we can only add or remove subscribers)
         public static event GameEvent OnGameStart, OnGameOver;
 
-        //Static method to call OnGameStart
         public static void TriggerGameStart()
         {
-            //If OnGameStart is not null (meaning if other methods already subscribed to it)
-            if (OnGameStart is not null)
-            {                
-                Console.WriteLine("Game Start event triggered...");
-                //Call the event - it will call all methods which was subscribed!
+            if (OnGameStart is not null)            
                 OnGameStart();
-            }
+            else Console.WriteLine("Game Start event NOT triggered as there were no listening methods.");
         }
 
+        //Static method to call OnGameOver
         public static void TriggerGameOver()
         {
+            //If OnGameOver is not null (meaning if other methods already subscribed to it)
             if (OnGameOver is not null)
             {
                 Console.WriteLine("Game Over event triggered...");
+                //Call the event - it will call all methods which was subscribed!
                 OnGameOver();
             }
         }
