@@ -23,6 +23,14 @@ namespace WpfApp_Udemy
         public MainWindow()
         {
             InitializeComponent();
+
+            //Creating and positioning Button using C# code (dynamic creation)
+            Button myButton = new Button();
+            myButton.Content = "B";
+            Grid.SetRow(myButton, 3);
+            Grid.SetColumn(myButton, 4);
+            Grid myGrid = (Grid)FindName("MainGrid");
+            myGrid.Children.Add(myButton);
         }
     }
 }
