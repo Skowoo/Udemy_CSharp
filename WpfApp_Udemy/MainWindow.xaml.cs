@@ -32,5 +32,11 @@ namespace WpfApp_Udemy
             Grid myGrid = (Grid)FindName("MainGrid");
             myGrid.Children.Add(myButton);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new TaskManager();
+            window.Show();
+        }
     }
 }

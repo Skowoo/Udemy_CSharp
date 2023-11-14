@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp_Udemy.TaskManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_Udemy"
+        mc:Ignorable="d"
+        Title="TaskManager" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0">
+            <TextBlock Name="TextBlock"/>
+        </ScrollViewer>
+
+        <TextBox Name="inputBox" Grid.Row="1"/>
+
+        <Button Name="AddBuddton" Content="Add task" Grid.Row="2" Click="AddBuddton_Click"/>
+
+    </Grid>
+</Window>

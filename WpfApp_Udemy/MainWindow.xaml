@@ -24,7 +24,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Button Content="A" Grid.Column="2" Grid.Row="3"/>
+        <Button Content="A" Grid.Column="2" Grid.Row="3" Click="Button_Click"/>
         
         <TextBlock Text="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" HorizontalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="1"/>
         <TextBlock Text="Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" HorizontalAlignment="Center" Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="2"/>
