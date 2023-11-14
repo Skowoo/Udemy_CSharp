@@ -8,27 +8,27 @@
         Title="TaskManager" Height="450" Width="300">
     <Grid Background="Blue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="5"/>
         </Grid.ColumnDefinitions>
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="5"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Background="DarkBlue" Grid.Row="1" Grid.Column="1">
-            <TextBlock Name="TextBlock" TextWrapping="Wrap" Foreground="White" Margin="0,0,10,0"/>
+        <ScrollViewer  Background="DarkBlue" Margin="5,5,5,5" Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="StackPanel" />
         </ScrollViewer>
 
         <TextBox Name="inputBox" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" KeyDown="inputBox_KeyDown"/>
 
-        <Button Name="AddBuddton" Content="Add task" Grid.Row="3" Grid.Column="1" 
-                Margin="5,5,5,5" Click="AddBuddton_Click" Background="Black" FontWeight="Bold" FontSize="16" Foreground="White"/>
+        <Button Content="Add task" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5" 
+                Click="AddBuddton_Click" Background="Black" FontWeight="Bold" FontSize="16" Foreground="White"/>
 
     </Grid>
 </Window>

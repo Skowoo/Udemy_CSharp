@@ -26,7 +26,18 @@ namespace WpfApp_Udemy
 
         private void AddBuddton_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock.Text += "- " + inputBox.Text + Environment.NewLine + Environment.NewLine;
+            if (string.IsNullOrEmpty(inputBox.Text))
+                return;
+
+            var input = new TextBlock
+            {
+                Text = "- " + inputBox.Text,
+                Foreground = new SolidColorBrush(Colors.Beige),
+                Margin = new Thickness(5,5,5,5),
+                TextWrapping = TextWrapping.Wrap,
+            };
+            
+            StackPanel.Children.Insert(0, input);
             inputBox.Text = string.Empty;
         }
 
