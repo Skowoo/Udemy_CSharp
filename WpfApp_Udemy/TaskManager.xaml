@@ -6,20 +6,29 @@
         xmlns:local="clr-namespace:WpfApp_Udemy"
         mc:Ignorable="d"
         Title="TaskManager" Height="450" Width="300">
-    <Grid>
+    <Grid Background="Blue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <ScrollViewer Grid.Row="0">
-            <TextBlock Name="TextBlock"/>
+        <ScrollViewer Background="DarkBlue" Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="TextBlock" TextWrapping="Wrap" Foreground="White" Margin="0,0,10,0"/>
         </ScrollViewer>
 
-        <TextBox Name="inputBox" Grid.Row="1"/>
+        <TextBox Name="inputBox" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5" KeyDown="inputBox_KeyDown"/>
 
-        <Button Name="AddBuddton" Content="Add task" Grid.Row="2" Click="AddBuddton_Click"/>
+        <Button Name="AddBuddton" Content="Add task" Grid.Row="3" Grid.Column="1" 
+                Margin="5,5,5,5" Click="AddBuddton_Click" Background="Black" FontWeight="Bold" FontSize="16" Foreground="White"/>
 
     </Grid>
 </Window>

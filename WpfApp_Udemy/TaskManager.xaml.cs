@@ -26,8 +26,14 @@ namespace WpfApp_Udemy
 
         private void AddBuddton_Click(object sender, RoutedEventArgs e)
         {
-            TextBlock.Text += "- " + inputBox.Text + Environment.NewLine;
+            TextBlock.Text += "- " + inputBox.Text + Environment.NewLine + Environment.NewLine;
             inputBox.Text = string.Empty;
+        }
+
+        private void inputBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+                AddBuddton_Click(sender, e);
         }
     }
 }
