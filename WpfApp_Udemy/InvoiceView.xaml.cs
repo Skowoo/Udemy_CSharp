@@ -16,16 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp_Udemy
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for InvoiceView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class InvoiceView : UserControl
     {
-        public MainWindow()
+        public InvoiceView()
         {
             InitializeComponent();
-
-            //Take content marker from XML and assign View to it
-            MainContent.Content = new LoginView();
         }
     }
 }
