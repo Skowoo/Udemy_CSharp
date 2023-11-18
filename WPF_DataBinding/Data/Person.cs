@@ -11,7 +11,5 @@ namespace WPF_DataBinding.Data
         public string? Name { get; set; }
 
         public int Age { get; set; }
-
-        public override string ToString() => $"Name: {Name}, Age: {Age}";
     }
 }

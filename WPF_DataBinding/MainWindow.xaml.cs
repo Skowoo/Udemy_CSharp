@@ -27,5 +27,11 @@ namespace WPF_DataBinding
         }
 
         private void InfoButton_Click(object sender, RoutedEventArgs e) => MessageBox.Show(person.ToString());
+
+        private void ArrayOpen_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ListBoxWindow();
+            window.Show();
+        }
     }
 }
