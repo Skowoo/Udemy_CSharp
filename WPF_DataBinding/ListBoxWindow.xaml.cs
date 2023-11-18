@@ -25,6 +25,13 @@ namespace WPF_DataBinding
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Environment Variables = Windows search bar => Environment Variables => Add, check and delete custom variables!
+            string? systemVariable = Environment.GetEnvironmentVariable("SystemVariable");
+            if (systemVariable is null)
+                MessageBox.Show("Brak zmiennej systemowej!");
+            else
+                MessageBox.Show($"Wartość zmiennej to: {systemVariable}");
+
             var selectedItems = ListBoxNames.SelectedItems;
             //Selected items return IList of object type - we need to cast them
             foreach (var item in selectedItems)
