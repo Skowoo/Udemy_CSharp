@@ -1,13 +1,5 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
+using WPF_DataBinding.Data;
 
 namespace WPF_DataBinding
 {
@@ -16,9 +8,24 @@ namespace WPF_DataBinding
     /// </summary>
     public partial class MainWindow : Window
     {
+        Person person = new Person
+        {
+            Name = "Barry",
+            Age = 19
+        };
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //Setting data context.
+            //OneWay binding - ReadOnly binding
+            //OneWayToSource - WriteOnly binding
+            //TwoWay - read/write binding
+            //OneTime - it will load only ONCE - at the load.
+            this.DataContext = person;
         }
+
+        private void InfoButton_Click(object sender, RoutedEventArgs e) => MessageBox.Show(person.ToString());
     }
 }
