@@ -24,18 +24,13 @@ namespace Udemy_CSharp
                 if (dic.ContainsKey(SumToFind - value) && dic[SumToFind - value] > 0)
                 {
                     dic[SumToFind - value] -= 1;
-
                     result++;
                     continue;
                 }
                 if (dic.ContainsKey(value))
-                {
                     dic[value] += 1;
-                }
                 else
-                {
                     dic.Add(value, 1);
-                }
             }
             return result;
         }
