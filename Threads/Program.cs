@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Basics.PseudoMain();
+            ThreadPoolTutorial.PseudoMain();
         }
     }
 }
