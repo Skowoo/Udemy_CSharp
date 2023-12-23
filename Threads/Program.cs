@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ThreadPoolTutorial.PseudoMain();
+            Join_IsAlive.PseudoMain();
         }
     }
 }
