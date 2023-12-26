@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF_DataBinding", "WPF_Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_Databases", "WPF_Databases\WPF_Databases.csproj", "{68601DB2-77D4-4C6F-B107-B70C73BC18DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads", "Threads\Threads.csproj", "{9B5BB7FD-29C6-493E-8A22-91644B194ED2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Threads", "Threads\Threads.csproj", "{9B5BB7FD-29C6-493E-8A22-91644B194ED2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTasks", "WPFTasks\WPFTasks.csproj", "{65C0823B-7AE5-4D55-89D9-39E120CBEA55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9B5BB7FD-29C6-493E-8A22-91644B194ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B5BB7FD-29C6-493E-8A22-91644B194ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B5BB7FD-29C6-493E-8A22-91644B194ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C0823B-7AE5-4D55-89D9-39E120CBEA55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C0823B-7AE5-4D55-89D9-39E120CBEA55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C0823B-7AE5-4D55-89D9-39E120CBEA55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C0823B-7AE5-4D55-89D9-39E120CBEA55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
